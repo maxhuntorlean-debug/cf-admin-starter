@@ -1,4 +1,5 @@
 import { login } from "../api.js";
+import { APP_NAME, APP_SUBTITLE } from "../config.js";
 
 export function LoginPage() {
     return `
@@ -6,9 +7,9 @@ export function LoginPage() {
             <div class="loginCard">
                 <div class="loginLogo">⚙️</div>
 
-                <h1 class="loginTitle">Admin</h1>
+                <h1 class="loginTitle">${escapeHtml(APP_NAME)}</h1>
 
-                <div class="loginSubtitle">Панель управления</div>
+                <div class="loginSubtitle">${escapeHtml(APP_SUBTITLE)}</div>
 
                 <form id="loginForm">
                     <div class="formGroup">
@@ -80,4 +81,13 @@ export function initLogin(onSuccess) {
             button.textContent = "Войти";
         }
     });
+}
+
+function escapeHtml(value) {
+    return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 }
