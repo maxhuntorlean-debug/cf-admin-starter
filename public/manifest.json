@@ -1,7 +1,7 @@
 {
-  "name": "Котопанда POS Admin",
-  "short_name": "POS Admin",
-  "description": "Администрирование Котопанда POS",
+  "name": "Admin Panel",
+  "short_name": "Admin",
+  "description": "Reusable administration panel",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
