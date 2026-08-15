@@ -1,7 +1,33 @@
 import { API_URL } from "./config.js";
 
+function validateApiUrl() {
+    const value = String(API_URL ?? "").trim();
+
+    if (!value || value.includes("YOUR-API")) {
+        throw new Error(
+            "API_URL не настроен. Открой public/js/config.js и укажи адрес API."
+        );
+    }
+
+    try {
+        const url = new URL(value);
+
+        if (url.protocol !== "https:" && url.protocol !== "http:") {
+            throw new Error();
+        }
+    } catch {
+        throw new Error(
+            "API_URL имеет неверный формат. Проверь public/js/config.js."
+        );
+    }
+
+    return value.replace(/\/$/, "");
+}
+
+const BASE_API_URL = validateApiUrl();
+
 async function request(path, options = {}) {
-    const response = await fetch(`${API_URL}${path}`, {
+    const response = await fetch(`${BASE_API_URL}${path}`, {
         ...options,
         credentials: "include",
         headers: {
