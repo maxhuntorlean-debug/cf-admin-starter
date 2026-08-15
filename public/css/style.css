@@ -1,0 +1,794 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background: #ffffff;
+    color: #222222;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+input,
+select {
+    outline: none;
+}
+
+
+/* =====================================
+   LOGIN
+   ===================================== */
+
+.loginPage {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: #ffffff;
+}
+
+.loginCard {
+    width: 100%;
+    max-width: 380px;
+}
+
+.loginLogo {
+    margin-bottom: 8px;
+
+    text-align: center;
+    font-size: 36px;
+}
+
+.loginTitle {
+    text-align: center;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #009900;
+}
+
+.loginSubtitle {
+    margin-top: 4px;
+    margin-bottom: 32px;
+
+    text-align: center;
+
+    font-size: 18px;
+    color: #666666;
+}
+
+
+/* =====================================
+   FORM
+   ===================================== */
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.loginInput,
+.formSelect {
+    width: 100%;
+    min-height: 56px;
+
+    padding: 0 14px;
+
+    border: 1px solid #aaaaaa;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #222222;
+
+    font-size: 18px;
+}
+
+.loginInput {
+    height: 56px;
+}
+
+div.loginInput {
+    height: auto;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    line-height: 1.3;
+}
+
+.formSelect {
+    height: 56px;
+}
+
+.loginInput:focus,
+.formSelect:focus {
+    border-color: #009900;
+}
+
+.loginInput:disabled,
+.formSelect:disabled {
+    background: #f5f5f5;
+    color: #777777;
+
+    cursor: not-allowed;
+}
+
+.loginError,
+.pageError {
+    min-height: 22px;
+
+    margin-bottom: 10px;
+
+    color: #c62828;
+    font-size: 15px;
+}
+
+.loginError {
+    text-align: center;
+}
+
+.loginButton,
+.primaryButton,
+.secondaryButton {
+    width: 100%;
+    min-height: 56px;
+
+    border-radius: 8px;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.loginButton,
+.primaryButton {
+    border: 1px solid #008800;
+
+    background: #009900;
+    color: #ffffff;
+}
+
+.loginButton:active,
+.primaryButton:active {
+    background: #008000;
+}
+
+.loginButton:disabled,
+.primaryButton:disabled {
+    border-color: #aaaaaa;
+
+    background: #aaaaaa;
+
+    cursor: default;
+}
+
+.secondaryButton {
+    border: 1px solid #bbbbbb;
+
+    background: #ffffff;
+    color: #222222;
+}
+
+.secondaryButton:active {
+    background: #eeeeee;
+}
+
+.primaryButton,
+.secondaryButton {
+    margin-top: 10px;
+}
+
+
+/* =====================================
+   ADMIN
+   ===================================== */
+
+.adminPage {
+    min-height: 100vh;
+
+    background: #ffffff;
+}
+
+.adminHeader {
+    min-height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 0 20px;
+
+    border-bottom: 1px solid #dddddd;
+
+    background: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.adminMenu {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+    padding: 24px 20px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.adminMenuItem {
+    width: 100%;
+    min-height: 92px;
+
+    padding: 16px 18px;
+
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #222222;
+
+    text-align: left;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.adminMenuItem:hover {
+    background: #fafafa;
+    border-color: #bbbbbb;
+}
+
+.adminMenuItem:active {
+    background: #f2f2f2;
+    transform: scale(0.99);
+}
+
+.adminMenuItem:last-child {
+    grid-column: 1 / -1;
+
+    min-height: 58px;
+
+    color: #b71c1c;
+}
+
+
+/* =====================================
+   COMMON
+   ===================================== */
+
+.content {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.headerTitle {
+    flex: 1;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.headerButton {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #009900;
+
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.headerButton:active {
+    background: #eeeeee;
+}
+
+.loading,
+.emptyState {
+    padding: 30px 10px;
+
+    text-align: center;
+
+    color: #777777;
+}
+
+
+/* =====================================
+   USERS
+   ===================================== */
+
+.usersList {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.userRow {
+    width: 100%;
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #222222;
+
+    text-align: left;
+}
+
+.userRow:hover {
+    background: #fafafa;
+}
+
+.userRow:active {
+    background: #f2f2f2;
+}
+
+.userMain {
+    min-width: 0;
+    flex: 1;
+}
+
+.userName {
+    margin-bottom: 4px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.userUsername {
+    font-size: 14px;
+
+    color: #777777;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.userUsername::before {
+    content: "@";
+}
+
+.userMeta {
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 5px;
+
+    text-align: right;
+}
+
+.userRole {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #444444;
+}
+
+.statusActive,
+.statusInactive {
+    padding: 3px 8px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.statusActive {
+    background: #eaf7ea;
+    color: #008000;
+}
+
+.statusInactive {
+    background: #fdecec;
+    color: #b71c1c;
+}
+
+
+/* =====================================
+   EDIT FORM
+   ===================================== */
+
+.editForm {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;
+}
+
+.editForm hr {
+    margin: 28px 0;
+
+    border: 0;
+    border-top: 1px solid #dddddd;
+}
+
+.editForm .formGroup > label:has(
+    input[type="checkbox"]
+) {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 0;
+
+    cursor: pointer;
+}
+
+.editForm .formGroup > label
+input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+
+    accent-color: #009900;
+}
+
+#passwordSuccess,
+#rolePermissionsSuccess {
+    min-height: 22px;
+
+    margin: 8px 0;
+
+    color: #009900;
+
+    font-size: 15px;
+}
+
+
+/* =====================================
+   ROLES / PERMISSIONS
+   ===================================== */
+
+.permissionGroup {
+    margin-bottom: 14px;
+
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+.permissionGroupTitle {
+    padding: 10px 14px;
+
+    border-bottom: 1px solid #dddddd;
+
+    background: #f7f7f7;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    color: #555555;
+}
+
+.permissionRow {
+    min-height: 56px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 14px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    cursor: pointer;
+}
+
+.permissionRow:last-child {
+    border-bottom: 0;
+}
+
+.permissionRow:hover {
+    background: #fafafa;
+}
+
+.permissionRow:active {
+    background: #f5f5f5;
+}
+
+.permissionRow input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+
+    flex-shrink: 0;
+
+    accent-color: #009900;
+
+    cursor: pointer;
+}
+
+.permissionRow input[type="checkbox"]:disabled {
+    cursor: default;
+}
+
+.permissionRow span {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.permissionRow strong {
+    font-size: 15px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    color: #222222;
+}
+
+.permissionRow small {
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    color: #777777;
+
+    word-break: break-word;
+}
+
+.permissionRow:has(
+    input[type="checkbox"]:disabled
+) {
+    background: #fafafa;
+
+    cursor: default;
+}
+
+.permissionRow:has(
+    input[type="checkbox"]:disabled
+) strong {
+    color: #666666;
+}
+
+.permissionRow:has(
+    input[type="checkbox"]:disabled
+) small {
+    color: #999999;
+}
+
+
+/* =====================================
+   MOBILE
+   ===================================== */
+
+@media (max-width: 600px) {
+
+    .loginPage {
+        padding: 18px;
+    }
+
+    .loginTitle {
+        font-size: 28px;
+    }
+
+    .adminHeader {
+        min-height: 58px;
+
+        padding: 0 14px;
+
+        gap: 10px;
+
+        font-size: 14px;
+    }
+
+    .adminMenu {
+        padding: 16px;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .adminMenuItem {
+        min-height: 72px;
+
+        padding: 14px 16px;
+
+        font-size: 17px;
+    }
+
+    .adminMenuItem:last-child {
+        min-height: 58px;
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .headerTitle {
+        font-size: 18px;
+    }
+
+    .usersList {
+        gap: 10px;
+    }
+
+    .userRow {
+        min-height: 72px;
+
+        gap: 12px;
+
+        padding: 12px 14px;
+    }
+
+    .userName {
+        font-size: 16px;
+    }
+
+    .userUsername {
+        font-size: 13px;
+    }
+
+    .userRole {
+        font-size: 13px;
+    }
+
+    .statusActive,
+    .statusInactive {
+        font-size: 11px;
+    }
+
+    .permissionGroup {
+        border-radius: 8px;
+    }
+
+    .permissionGroupTitle {
+        padding: 10px 12px;
+
+        font-size: 13px;
+    }
+
+    .permissionRow {
+        min-height: 56px;
+
+        gap: 11px;
+
+        padding: 10px 12px;
+    }
+
+    .permissionRow strong {
+        font-size: 14px;
+    }
+
+    .permissionRow small {
+        font-size: 11px;
+    }
+}
+
+/* =====================================
+   ROLE / PERMISSION FORMS
+   ===================================== */
+
+.editForm h2 {
+    margin-bottom: 18px;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+#roleEditSuccess,
+#permissionFormSuccess {
+    min-height: 22px;
+
+    margin: 8px 0;
+
+    color: #009900;
+
+    font-size: 15px;
+}
+
+#managePermissions {
+    margin-top: 18px;
+}
+
+.permissionRow[type="button"] {
+    width: 100%;
+
+    border: 0;
+    background: #ffffff;
+
+    text-align: left;
+}
+
+.permissionRow[type="button"]:hover {
+    background: #fafafa;
+}
+
+.permissionRow[type="button"] span {
+    width: 100%;
+}
+
+#rolesAdd {
+    font-size: 30px;
+    line-height: 1;
+}
+
+@media (max-width: 600px) {
+
+    .editForm h2 {
+        font-size: 20px;
+    }
+
+    #managePermissions {
+        margin-top: 14px;
+    }
+}

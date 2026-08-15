@@ -1,0 +1,3403 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+public/
+  assets/
+    icons/
+      icon-192.png
+      icon-512.png
+  css/
+    style.css
+  js/
+    pages/
+      home.js
+      login.js
+      roles.js
+      users.js
+    api.js
+    app.js
+  index.html
+  manifest.json
+  sw.js
+.gitignore
+AGENTS.md
+package.json
+wrangler.jsonc
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="public/css/style.css">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background: #ffffff;
+    color: #222222;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+}
+
+
+/* =====================================
+   LOGIN
+   ===================================== */
+
+.loginPage {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: #ffffff;
+}
+
+.loginCard {
+    width: 100%;
+    max-width: 380px;
+}
+
+.loginLogo {
+    margin-bottom: 8px;
+
+    text-align: center;
+    font-size: 36px;
+}
+
+.loginTitle {
+    text-align: center;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #009900;
+}
+
+.loginSubtitle {
+    margin-top: 4px;
+    margin-bottom: 32px;
+
+    text-align: center;
+
+    font-size: 18px;
+    color: #666666;
+}
+
+
+/* =====================================
+   FORM
+   ===================================== */
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.loginInput {
+    width: 100%;
+    height: 56px;
+
+    padding: 0 14px;
+
+    border: 1px solid #aaaaaa;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    font-size: 20px;
+}
+
+.loginInput:focus {
+    border-color: #009900;
+}
+
+.loginError {
+    min-height: 24px;
+
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    color: #c62828;
+    font-size: 16px;
+}
+
+.loginButton {
+    width: 100%;
+    height: 56px;
+
+    border: 1px solid #008800;
+    border-radius: 8px;
+
+    background: #009900;
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.loginButton:active {
+    background: #008000;
+}
+
+.loginButton:disabled {
+    background: #aaaaaa;
+    border-color: #aaaaaa;
+
+    cursor: default;
+}
+
+
+/* =====================================
+   ADMIN
+   ===================================== */
+
+.adminPage {
+    min-height: 100vh;
+
+    background: #ffffff;
+}
+
+.adminHeader {
+    min-height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 0 24px;
+
+    border-bottom: 1px solid #dddddd;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.adminMenu {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.adminMenuItem {
+    width: 100%;
+    min-height: 58px;
+
+    padding: 0 18px;
+
+    border: 1px solid #bbbbbb;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #222222;
+
+    text-align: left;
+
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.adminMenuItem:active {
+    background: #eeeeee;
+}
+
+
+/* =====================================
+   MOBILE
+   ===================================== */
+
+@media (max-width: 600px) {
+
+    .loginPage {
+        padding: 18px;
+    }
+
+    .loginTitle {
+        font-size: 28px;
+    }
+
+    .adminHeader {
+        min-height: 60px;
+
+        padding: 0 16px;
+
+        font-size: 16px;
+    }
+
+    .adminMenu {
+        padding: 16px;
+    }
+
+    .adminMenuItem {
+        min-height: 60px;
+
+        font-size: 18px;
+    }
+}
+
+/* =====================================
+   COMMON
+   ===================================== */
+
+.content {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.headerTitle {
+    flex: 1;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.headerButton {
+    width: 44px;
+    height: 44px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #009900;
+
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.headerButton:active {
+    background: #eeeeee;
+}
+
+.pageError {
+    margin-bottom: 12px;
+
+    color: #c62828;
+
+    font-size: 16px;
+}
+
+.loading,
+.emptyState {
+    padding: 30px 10px;
+
+    text-align: center;
+
+    color: #777777;
+}
+
+
+/* =====================================
+   USERS
+   ===================================== */
+
+.usersList {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.userRow {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 16px;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #222222;
+
+    text-align: left;
+}
+
+.userRow:active {
+    background: #f2f2f2;
+}
+
+.userMain {
+    min-width: 0;
+}
+
+.userName {
+    margin-bottom: 4px;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.userUsername {
+    color: #777777;
+
+    font-size: 15px;
+}
+
+.userMeta {
+    flex-shrink: 0;
+
+    text-align: right;
+}
+
+.userRole {
+    margin-bottom: 4px;
+
+    font-size: 15px;
+}
+
+.statusActive {
+    color: #009900;
+
+    font-size: 14px;
+}
+
+.statusInactive {
+    color: #c62828;
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   EDIT FORM
+   ===================================== */
+
+.editForm {
+    width: 100%;
+}
+
+.formSelect {
+    width: 100%;
+    height: 56px;
+
+    padding: 0 14px;
+
+    border: 1px solid #aaaaaa;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #222222;
+
+    font-size: 18px;
+}
+
+.formSelect:focus {
+    border-color: #009900;
+}
+
+.primaryButton,
+.secondaryButton {
+    width: 100%;
+    min-height: 56px;
+
+    margin-top: 10px;
+
+    border-radius: 8px;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.primaryButton {
+    border: 1px solid #008800;
+
+    background: #009900;
+    color: #ffffff;
+}
+
+.primaryButton:active {
+    background: #008000;
+}
+
+.primaryButton:disabled {
+    border-color: #aaaaaa;
+
+    background: #aaaaaa;
+}
+
+.secondaryButton {
+    border: 1px solid #bbbbbb;
+
+    background: #ffffff;
+    color: #222222;
+}
+
+.secondaryButton:active {
+    background: #eeeeee;
+}
+
+
+/* =====================================
+   USERS MOBILE
+   ===================================== */
+
+@media (max-width: 600px) {
+
+    .content {
+        padding: 16px;
+    }
+
+    .userRow {
+        gap: 12px;
+
+        padding: 14px;
+    }
+
+    .userName {
+        font-size: 17px;
+    }
+
+    .userRole {
+        font-size: 14px;
+    }
+}
+</file>
+
+<file path="public/js/pages/home.js">
+export function HomePage(
+    user
+) {
+
+    return `
+        <div class="adminPage">
+
+            <header class="adminHeader">
+
+                <div>
+                    🐼 Котопанда POS Admin
+                </div>
+
+                <div>
+                    ${escapeHtml(
+                        user.name ||
+                        user.username ||
+                        ""
+                    )}
+                </div>
+
+            </header>
+
+
+            <main class="adminMenu">
+
+                <button
+                    id="openUsers"
+                    class="adminMenuItem"
+                    type="button"
+                >
+                    👥 Пользователи
+                </button>
+
+
+                <button
+                    id="openRoles"
+                    class="adminMenuItem"
+                    type="button"
+                >
+                    🛡 Роли и права
+                </button>
+
+
+                <button
+                    id="logoutButton"
+                    class="adminMenuItem"
+                    type="button"
+                >
+                    🚪 Выйти
+                </button>
+
+            </main>
+
+        </div>
+    `;
+}
+
+
+export function initHome({
+    onUsers,
+    onRoles,
+    onLogout
+}) {
+
+    document
+        .getElementById("openUsers")
+        .addEventListener(
+            "click",
+            onUsers
+        );
+
+
+    document
+        .getElementById("openRoles")
+        .addEventListener(
+            "click",
+            onRoles
+        );
+
+
+    document
+        .getElementById("logoutButton")
+        .addEventListener(
+            "click",
+            onLogout
+        );
+}
+
+
+function escapeHtml(value) {
+
+    return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+</file>
+
+<file path="public/js/pages/login.js">
+import {
+    login
+} from "../api.js";
+
+
+export function LoginPage() {
+
+    return `
+        <div class="loginPage">
+
+            <div class="loginCard">
+
+                <div class="loginLogo">
+                    🐼
+                </div>
+
+                <h1 class="loginTitle">
+                    Котопанда
+                </h1>
+
+                <div class="loginSubtitle">
+                    POS Admin
+                </div>
+
+
+                <form id="loginForm">
+
+                    <div class="formGroup">
+
+                        <label for="loginUsername">
+                            Логин
+                        </label>
+
+                        <input
+                            id="loginUsername"
+                            class="loginInput"
+                            type="text"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="formGroup">
+
+                        <label for="loginPassword">
+                            Пароль
+                        </label>
+
+                        <input
+                            id="loginPassword"
+                            class="loginInput"
+                            type="password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div
+                        id="loginError"
+                        class="loginError"
+                    ></div>
+
+
+                    <button
+                        id="loginButton"
+                        class="loginButton"
+                        type="submit"
+                    >
+                        Войти
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    `;
+}
+
+
+export function initLogin(onSuccess) {
+
+    const form =
+        document.getElementById("loginForm");
+
+    const usernameInput =
+        document.getElementById("loginUsername");
+
+    const passwordInput =
+        document.getElementById("loginPassword");
+
+    const errorBox =
+        document.getElementById("loginError");
+
+    const button =
+        document.getElementById("loginButton");
+
+
+    form.addEventListener(
+        "submit",
+        async (event) => {
+
+            event.preventDefault();
+
+            errorBox.textContent = "";
+
+            button.disabled = true;
+            button.textContent = "Вход...";
+
+
+            try {
+
+                const result =
+                    await login(
+                        usernameInput.value.trim(),
+                        passwordInput.value
+                    );
+
+
+                if (!result.ok) {
+
+                    errorBox.textContent =
+                        result.error?.message ||
+                        result.error ||
+                        "Ошибка входа";
+
+                    return;
+                }
+
+
+                await onSuccess();
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                errorBox.textContent =
+                    "Нет связи с сервером";
+
+
+            } finally {
+
+                button.disabled = false;
+                button.textContent = "Войти";
+            }
+        }
+    );
+}
+</file>
+
+<file path="public/js/pages/roles.js">
+import {
+    getRoles,
+    getPermissions,
+    getRolePermissions,
+    updateRolePermissions
+} from "../api.js";
+
+
+export function RolesPage() {
+
+    return `
+        <div class="adminPage">
+
+            <header class="adminHeader">
+
+                <button
+                    id="rolesBack"
+                    class="headerButton"
+                    type="button"
+                >
+                    ←
+                </button>
+
+                <div class="headerTitle">
+                    Роли и права
+                </div>
+
+                <div class="headerButton"></div>
+
+            </header>
+
+
+            <main class="content">
+
+                <div
+                    id="rolesError"
+                    class="pageError"
+                ></div>
+
+                <div
+                    id="rolesContent"
+                >
+                    Загрузка...
+                </div>
+
+            </main>
+
+        </div>
+    `;
+}
+
+
+export async function initRoles({
+    onBack
+}) {
+
+    const backButton =
+        document.getElementById(
+            "rolesBack"
+        );
+
+    const content =
+        document.getElementById(
+            "rolesContent"
+        );
+
+    const errorBox =
+        document.getElementById(
+            "rolesError"
+        );
+
+
+    backButton.addEventListener(
+        "click",
+        onBack
+    );
+
+
+    content.addEventListener(
+        "click",
+        async (event) => {
+
+            const row =
+                event.target.closest(
+                    "[data-role-id]"
+                );
+
+            if (!row) {
+                return;
+            }
+
+
+            const roleId =
+                Number(
+                    row.dataset.roleId
+                );
+
+
+            await showRole(
+                roleId,
+                content,
+                errorBox
+            );
+        }
+    );
+
+
+    await loadRoles(
+        content,
+        errorBox
+    );
+}
+
+
+// =====================================
+// ROLE LIST
+// =====================================
+
+async function loadRoles(
+    content,
+    errorBox
+) {
+
+    errorBox.textContent = "";
+
+    content.innerHTML = `
+        <div class="loading">
+            Загрузка...
+        </div>
+    `;
+
+
+    try {
+
+        const result =
+            await getRoles();
+
+
+        if (!result.ok) {
+
+            errorBox.textContent =
+                result.error ||
+                "Не удалось получить роли";
+
+            content.innerHTML = "";
+
+            return;
+        }
+
+
+        renderRoles(
+            content,
+            result.roles || []
+        );
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        errorBox.textContent =
+            "Нет связи с сервером";
+
+        content.innerHTML = "";
+    }
+}
+
+
+function renderRoles(
+    content,
+    roles
+) {
+
+    if (!roles.length) {
+
+        content.innerHTML = `
+            <div class="emptyState">
+                Ролей нет
+            </div>
+        `;
+
+        return;
+    }
+
+
+    content.innerHTML = `
+        <div class="usersList">
+
+            ${roles
+                .map(
+                    (role) => `
+                        <button
+                            class="userRow"
+                            type="button"
+                            data-role-id="${role.id}"
+                        >
+
+                            <div class="userMain">
+
+                                <div class="userName">
+                                    ${escapeHtml(role.name)}
+                                </div>
+
+                                <div class="userUsername">
+                                    ${escapeHtml(role.code)}
+                                </div>
+
+                            </div>
+
+
+                            <div class="userMeta">
+
+                                <div class="${
+                                    role.active
+                                        ? "statusActive"
+                                        : "statusInactive"
+                                }">
+                                    ${
+                                        role.active
+                                            ? "Активна"
+                                            : "Отключена"
+                                    }
+                                </div>
+
+                                <div>
+                                    ›
+                                </div>
+
+                            </div>
+
+                        </button>
+                    `
+                )
+                .join("")}
+
+        </div>
+    `;
+}
+
+
+// =====================================
+// ROLE
+// =====================================
+
+async function showRole(
+    roleId,
+    content,
+    errorBox
+) {
+
+    errorBox.textContent = "";
+
+    content.innerHTML = `
+        <div class="loading">
+            Загрузка прав...
+        </div>
+    `;
+
+
+    let permissionsResult;
+    let roleResult;
+
+
+    try {
+
+        [
+            permissionsResult,
+            roleResult
+        ] = await Promise.all([
+            getPermissions(),
+            getRolePermissions(roleId)
+        ]);
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        errorBox.textContent =
+            "Нет связи с сервером";
+
+        return;
+    }
+
+
+    if (!permissionsResult.ok) {
+
+        errorBox.textContent =
+            permissionsResult.error ||
+            "Не удалось получить список прав";
+
+        return;
+    }
+
+
+    if (!roleResult.ok) {
+
+        errorBox.textContent =
+            roleResult.error ||
+            "Не удалось получить права роли";
+
+        return;
+    }
+
+
+    const role =
+        roleResult.role;
+
+    const allPermissions =
+        permissionsResult.permissions || [];
+
+    const rolePermissions =
+        roleResult.permissions || [];
+
+
+    const selectedIds =
+        new Set(
+            rolePermissions.map(
+                (permission) =>
+                    Number(permission.id)
+            )
+        );
+
+
+    const groups =
+        groupPermissions(
+            allPermissions
+        );
+
+
+    content.innerHTML = `
+        <div class="editForm">
+
+            <div class="formGroup">
+
+                <label>
+                    Роль
+                </label>
+
+                <div class="loginInput">
+                    ${escapeHtml(role.name)}
+                </div>
+
+            </div>
+
+
+            <div class="formGroup">
+
+                <label>
+                    Код
+                </label>
+
+                <div class="loginInput">
+                    ${escapeHtml(role.code)}
+                </div>
+
+            </div>
+
+
+            <form id="rolePermissionsForm">
+
+                ${Object.entries(groups)
+                    .map(
+                        ([groupName, permissions]) => `
+                            <div class="permissionGroup">
+
+                                <div class="permissionGroupTitle">
+                                    ${escapeHtml(groupName)}
+                                </div>
+
+                                ${permissions
+                                    .map(
+                                        (permission) => {
+
+                                            const isAdminAccess =
+                                                permission.code ===
+                                                "admin.access";
+
+                                            const locked =
+                                                role.code === "admin" &&
+                                                isAdminAccess;
+
+                                            return `
+                                                <label class="permissionRow">
+
+                                                    <input
+                                                        type="checkbox"
+                                                        name="permission"
+                                                        value="${permission.id}"
+                                                        ${
+                                                            selectedIds.has(
+                                                                Number(
+                                                                    permission.id
+                                                                )
+                                                            )
+                                                                ? "checked"
+                                                                : ""
+                                                        }
+                                                        ${
+                                                            locked
+                                                                ? "disabled"
+                                                                : ""
+                                                        }
+                                                    >
+
+                                                    <span>
+
+                                                        <strong>
+                                                            ${escapeHtml(
+                                                                permission.name
+                                                            )}
+                                                        </strong>
+
+                                                        <small>
+                                                            ${escapeHtml(
+                                                                permission.code
+                                                            )}
+                                                        </small>
+
+                                                    </span>
+
+                                                </label>
+                                            `;
+                                        }
+                                    )
+                                    .join("")}
+
+                            </div>
+                        `
+                    )
+                    .join("")}
+
+
+                <div
+                    id="rolePermissionsError"
+                    class="pageError"
+                ></div>
+
+
+                <div
+                    id="rolePermissionsSuccess"
+                ></div>
+
+
+                <button
+                    id="saveRolePermissions"
+                    class="primaryButton"
+                    type="submit"
+                >
+                    Сохранить права
+                </button>
+
+
+                <button
+                    id="rolePermissionsBack"
+                    class="secondaryButton"
+                    type="button"
+                >
+                    Назад
+                </button>
+
+            </form>
+
+        </div>
+    `;
+
+
+    const form =
+        document.getElementById(
+            "rolePermissionsForm"
+        );
+
+    const saveButton =
+        document.getElementById(
+            "saveRolePermissions"
+        );
+
+    const backButton =
+        document.getElementById(
+            "rolePermissionsBack"
+        );
+
+    const formError =
+        document.getElementById(
+            "rolePermissionsError"
+        );
+
+    const successBox =
+        document.getElementById(
+            "rolePermissionsSuccess"
+        );
+
+
+    backButton.addEventListener(
+        "click",
+        () => loadRoles(
+            content,
+            errorBox
+        )
+    );
+
+
+    form.addEventListener(
+        "submit",
+        async (event) => {
+
+            event.preventDefault();
+
+            formError.textContent = "";
+            successBox.textContent = "";
+
+
+            const checked =
+                [
+                    ...form.querySelectorAll(
+                        'input[name="permission"]:checked'
+                    )
+                ];
+
+
+            const permissionIds =
+                checked.map(
+                    (input) =>
+                        Number(input.value)
+                );
+
+
+            // disabled checkbox не попадёт
+            // в FormData, поэтому для admin
+            // гарантированно возвращаем admin.access
+
+            if (role.code === "admin") {
+
+                const adminAccess =
+                    allPermissions.find(
+                        (permission) =>
+                            permission.code ===
+                            "admin.access"
+                    );
+
+
+                if (
+                    adminAccess &&
+                    !permissionIds.includes(
+                        Number(adminAccess.id)
+                    )
+                ) {
+
+                    permissionIds.push(
+                        Number(adminAccess.id)
+                    );
+                }
+            }
+
+
+            saveButton.disabled = true;
+
+            saveButton.textContent =
+                "Сохранение...";
+
+
+            try {
+
+                const result =
+                    await updateRolePermissions(
+                        roleId,
+                        permissionIds
+                    );
+
+
+                if (!result.ok) {
+
+                    formError.textContent =
+                        result.error ||
+                        "Не удалось сохранить права";
+
+                    return;
+                }
+
+
+                successBox.textContent =
+                    "Права сохранены";
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                formError.textContent =
+                    "Нет связи с сервером";
+
+
+            } finally {
+
+                saveButton.disabled = false;
+
+                saveButton.textContent =
+                    "Сохранить права";
+            }
+        }
+    );
+}
+
+
+// =====================================
+// HELPERS
+// =====================================
+
+function groupPermissions(
+    permissions
+) {
+
+    const groups = {};
+
+
+    for (const permission of permissions) {
+
+        const group =
+            permission.group_name ||
+            "other";
+
+
+        if (!groups[group]) {
+
+            groups[group] = [];
+        }
+
+
+        groups[group].push(
+            permission
+        );
+    }
+
+
+    return groups;
+}
+
+
+function escapeHtml(value) {
+
+    return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+</file>
+
+<file path="public/js/pages/users.js">
+import {
+    getUsers,
+    getUser,
+    getRoles,
+    createUser,
+    updateUser,
+    changeUserPassword
+} from "../api.js";
+
+
+export function UsersPage() {
+
+    return `
+        <div class="adminPage">
+
+            <header class="adminHeader">
+
+                <button
+                    id="usersBack"
+                    class="headerButton"
+                    type="button"
+                >
+                    ←
+                </button>
+
+                <div class="headerTitle">
+                    Пользователи
+                </div>
+
+                <button
+                    id="usersAdd"
+                    class="headerButton"
+                    type="button"
+                >
+                    ＋
+                </button>
+
+            </header>
+
+
+            <main class="content">
+
+                <div
+                    id="usersError"
+                    class="pageError"
+                ></div>
+
+                <div
+                    id="usersList"
+                    class="usersList"
+                >
+                    Загрузка...
+                </div>
+
+            </main>
+
+        </div>
+    `;
+}
+
+
+export async function initUsers({
+    onBack
+}) {
+
+    const backButton =
+        document.getElementById("usersBack");
+
+    const addButton =
+        document.getElementById("usersAdd");
+
+    const list =
+        document.getElementById("usersList");
+
+    const errorBox =
+        document.getElementById("usersError");
+
+
+    backButton.addEventListener(
+        "click",
+        onBack
+    );
+
+
+    addButton.addEventListener(
+        "click",
+        () => showCreateUserForm(
+            list,
+            errorBox
+        )
+    );
+
+
+    list.addEventListener(
+        "click",
+        async (event) => {
+
+            const row =
+                event.target.closest(
+                    "[data-user-id]"
+                );
+
+            if (!row) {
+                return;
+            }
+
+            const userId =
+                Number(row.dataset.userId);
+
+            await showEditUserForm(
+                userId,
+                list,
+                errorBox
+            );
+        }
+    );
+
+
+    await loadUsers(
+        list,
+        errorBox
+    );
+}
+
+
+// =====================================
+// LIST
+// =====================================
+
+async function loadUsers(
+    list,
+    errorBox
+) {
+
+    errorBox.textContent = "";
+
+    list.innerHTML = `
+        <div class="loading">
+            Загрузка...
+        </div>
+    `;
+
+
+    try {
+
+        const result =
+            await getUsers();
+
+
+        if (!result.ok) {
+
+            errorBox.textContent =
+                result.error ||
+                "Не удалось получить пользователей";
+
+            list.innerHTML = "";
+
+            return;
+        }
+
+
+        renderUsers(
+            list,
+            result.users || []
+        );
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        errorBox.textContent =
+            "Нет связи с сервером";
+
+        list.innerHTML = "";
+    }
+}
+
+
+function renderUsers(
+    list,
+    users
+) {
+
+    if (!users.length) {
+
+        list.innerHTML = `
+            <div class="emptyState">
+                Пользователей нет
+            </div>
+        `;
+
+        return;
+    }
+
+
+    list.innerHTML =
+        users
+            .map(
+                (user) => `
+                    <button
+                        class="userRow"
+                        type="button"
+                        data-user-id="${user.id}"
+                    >
+
+                        <div class="userMain">
+
+                            <div class="userName">
+                                ${escapeHtml(user.name)}
+                            </div>
+
+                            <div class="userUsername">
+                                ${escapeHtml(user.username)}
+                            </div>
+
+                        </div>
+
+
+                        <div class="userMeta">
+
+                            <div class="userRole">
+                                ${escapeHtml(
+                                    user.role_name ||
+                                    user.role ||
+                                    "Без роли"
+                                )}
+                            </div>
+
+                            <div class="${
+                                user.active
+                                    ? "statusActive"
+                                    : "statusInactive"
+                            }">
+                                ${
+                                    user.active
+                                        ? "Активен"
+                                        : "Заблокирован"
+                                }
+                            </div>
+
+                        </div>
+
+                    </button>
+                `
+            )
+            .join("");
+}
+
+
+// =====================================
+// CREATE USER
+// =====================================
+
+async function showCreateUserForm(
+    list,
+    errorBox
+) {
+
+    errorBox.textContent = "";
+
+    list.innerHTML = `
+        <div class="loading">
+            Загрузка ролей...
+        </div>
+    `;
+
+
+    let rolesResult;
+
+
+    try {
+
+        rolesResult =
+            await getRoles();
+
+    } catch (error) {
+
+        console.error(error);
+
+        errorBox.textContent =
+            "Не удалось загрузить роли";
+
+        return;
+    }
+
+
+    if (!rolesResult.ok) {
+
+        errorBox.textContent =
+            rolesResult.error ||
+            "Не удалось загрузить роли";
+
+        return;
+    }
+
+
+    const roles =
+        rolesResult.roles || [];
+
+
+    list.innerHTML = `
+        <form
+            id="createUserForm"
+            class="editForm"
+        >
+
+            <div class="formGroup">
+
+                <label for="userName">
+                    Имя
+                </label>
+
+                <input
+                    id="userName"
+                    class="loginInput"
+                    type="text"
+                    required
+                >
+
+            </div>
+
+
+            <div class="formGroup">
+
+                <label for="userUsername">
+                    Логин
+                </label>
+
+                <input
+                    id="userUsername"
+                    class="loginInput"
+                    type="text"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+            <div class="formGroup">
+
+                <label for="userPassword">
+                    Пароль
+                </label>
+
+                <input
+                    id="userPassword"
+                    class="loginInput"
+                    type="password"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <div class="formGroup">
+
+                <label for="userRole">
+                    Роль
+                </label>
+
+                <select
+                    id="userRole"
+                    class="formSelect"
+                    required
+                >
+
+                    <option value="">
+                        Выберите роль
+                    </option>
+
+                    ${roles
+                        .filter(
+                            (role) =>
+                                role.active
+                        )
+                        .map(
+                            (role) => `
+                                <option value="${role.id}">
+                                    ${escapeHtml(role.name)}
+                                </option>
+                            `
+                        )
+                        .join("")}
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="createUserError"
+                class="pageError"
+            ></div>
+
+
+            <button
+                id="createUserButton"
+                class="primaryButton"
+                type="submit"
+            >
+                Создать пользователя
+            </button>
+
+
+            <button
+                id="createUserCancel"
+                class="secondaryButton"
+                type="button"
+            >
+                Отмена
+            </button>
+
+        </form>
+    `;
+
+
+    const form =
+        document.getElementById(
+            "createUserForm"
+        );
+
+    const cancel =
+        document.getElementById(
+            "createUserCancel"
+        );
+
+    const button =
+        document.getElementById(
+            "createUserButton"
+        );
+
+    const formError =
+        document.getElementById(
+            "createUserError"
+        );
+
+
+    cancel.addEventListener(
+        "click",
+        () => loadUsers(
+            list,
+            errorBox
+        )
+    );
+
+
+    form.addEventListener(
+        "submit",
+        async (event) => {
+
+            event.preventDefault();
+
+            formError.textContent = "";
+
+            button.disabled = true;
+            button.textContent = "Создание...";
+
+
+            const data = {
+
+                name:
+                    document
+                        .getElementById("userName")
+                        .value
+                        .trim(),
+
+                username:
+                    document
+                        .getElementById("userUsername")
+                        .value
+                        .trim(),
+
+                password:
+                    document
+                        .getElementById("userPassword")
+                        .value,
+
+                roleId:
+                    Number(
+                        document
+                            .getElementById("userRole")
+                            .value
+                    )
+            };
+
+
+            try {
+
+                const result =
+                    await createUser(data);
+
+
+                if (!result.ok) {
+
+                    formError.textContent =
+                        result.error ||
+                        "Не удалось создать пользователя";
+
+                    return;
+                }
+
+
+                await loadUsers(
+                    list,
+                    errorBox
+                );
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                formError.textContent =
+                    "Нет связи с сервером";
+
+
+            } finally {
+
+                button.disabled = false;
+
+                button.textContent =
+                    "Создать пользователя";
+            }
+        }
+    );
+}
+
+
+// =====================================
+// EDIT USER
+// =====================================
+
+async function showEditUserForm(
+    userId,
+    list,
+    errorBox
+) {
+
+    errorBox.textContent = "";
+
+    list.innerHTML = `
+        <div class="loading">
+            Загрузка пользователя...
+        </div>
+    `;
+
+
+    let userResult;
+    let rolesResult;
+
+
+    try {
+
+        [
+            userResult,
+            rolesResult
+        ] = await Promise.all([
+            getUser(userId),
+            getRoles()
+        ]);
+
+    } catch (error) {
+
+        console.error(error);
+
+        errorBox.textContent =
+            "Нет связи с сервером";
+
+        return;
+    }
+
+
+    if (!userResult.ok) {
+
+        errorBox.textContent =
+            userResult.error ||
+            "Не удалось получить пользователя";
+
+        return;
+    }
+
+
+    if (!rolesResult.ok) {
+
+        errorBox.textContent =
+            rolesResult.error ||
+            "Не удалось получить роли";
+
+        return;
+    }
+
+
+    const user =
+        userResult.user;
+
+    const roles =
+        rolesResult.roles || [];
+
+
+    list.innerHTML = `
+        <div class="editForm">
+
+            <form id="editUserForm">
+
+                <div class="formGroup">
+
+                    <label for="editUserName">
+                        Имя
+                    </label>
+
+                    <input
+                        id="editUserName"
+                        class="loginInput"
+                        type="text"
+                        value="${escapeAttribute(user.name)}"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="formGroup">
+
+                    <label for="editUserUsername">
+                        Логин
+                    </label>
+
+                    <input
+                        id="editUserUsername"
+                        class="loginInput"
+                        type="text"
+                        value="${escapeAttribute(user.username)}"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="formGroup">
+
+                    <label for="editUserRole">
+                        Роль
+                    </label>
+
+                    <select
+                        id="editUserRole"
+                        class="formSelect"
+                        required
+                    >
+
+                        ${roles
+                            .filter(
+                                (role) =>
+                                    role.active ||
+                                    Number(role.id) ===
+                                    Number(user.role_id)
+                            )
+                            .map(
+                                (role) => `
+                                    <option
+                                        value="${role.id}"
+                                        ${
+                                            Number(role.id) ===
+                                            Number(user.role_id)
+                                                ? "selected"
+                                                : ""
+                                        }
+                                    >
+                                        ${escapeHtml(role.name)}
+                                    </option>
+                                `
+                            )
+                            .join("")}
+
+                    </select>
+
+                </div>
+
+
+                <div class="formGroup">
+
+                    <label>
+
+                        <input
+                            id="editUserActive"
+                            type="checkbox"
+                            ${user.active ? "checked" : ""}
+                        >
+
+                        Пользователь активен
+
+                    </label>
+
+                </div>
+
+
+                <div
+                    id="editUserError"
+                    class="pageError"
+                ></div>
+
+
+                <button
+                    id="editUserSave"
+                    class="primaryButton"
+                    type="submit"
+                >
+                    Сохранить
+                </button>
+
+
+                <button
+                    id="editUserCancel"
+                    class="secondaryButton"
+                    type="button"
+                >
+                    Назад
+                </button>
+
+            </form>
+
+
+            <hr>
+
+
+            <form id="changePasswordForm">
+
+                <div class="formGroup">
+
+                    <label for="newUserPassword">
+                        Новый пароль
+                    </label>
+
+                    <input
+                        id="newUserPassword"
+                        class="loginInput"
+                        type="password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <div
+                    id="passwordError"
+                    class="pageError"
+                ></div>
+
+
+                <div
+                    id="passwordSuccess"
+                ></div>
+
+
+                <button
+                    id="changePasswordButton"
+                    class="secondaryButton"
+                    type="submit"
+                >
+                    Сменить пароль
+                </button>
+
+            </form>
+
+        </div>
+    `;
+
+
+    const editForm =
+        document.getElementById(
+            "editUserForm"
+        );
+
+    const cancelButton =
+        document.getElementById(
+            "editUserCancel"
+        );
+
+    const saveButton =
+        document.getElementById(
+            "editUserSave"
+        );
+
+    const editError =
+        document.getElementById(
+            "editUserError"
+        );
+
+    const passwordForm =
+        document.getElementById(
+            "changePasswordForm"
+        );
+
+    const passwordButton =
+        document.getElementById(
+            "changePasswordButton"
+        );
+
+    const passwordError =
+        document.getElementById(
+            "passwordError"
+        );
+
+    const passwordSuccess =
+        document.getElementById(
+            "passwordSuccess"
+        );
+
+
+    cancelButton.addEventListener(
+        "click",
+        () => loadUsers(
+            list,
+            errorBox
+        )
+    );
+
+
+    editForm.addEventListener(
+        "submit",
+        async (event) => {
+
+            event.preventDefault();
+
+            editError.textContent = "";
+
+            saveButton.disabled = true;
+            saveButton.textContent =
+                "Сохранение...";
+
+
+            const data = {
+
+                name:
+                    document
+                        .getElementById(
+                            "editUserName"
+                        )
+                        .value
+                        .trim(),
+
+                roleId:
+                    Number(
+                        document
+                            .getElementById(
+                                "editUserRole"
+                            )
+                            .value
+                    ),
+
+                active:
+                    document
+                        .getElementById(
+                            "editUserActive"
+                        )
+                        .checked
+            };
+
+
+            try {
+
+                const result =
+                    await updateUser(
+                        userId,
+                        data
+                    );
+
+
+                if (!result.ok) {
+
+                    editError.textContent =
+                        result.error ||
+                        "Не удалось сохранить пользователя";
+
+                    return;
+                }
+
+
+                await loadUsers(
+                    list,
+                    errorBox
+                );
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                editError.textContent =
+                    "Нет связи с сервером";
+
+
+            } finally {
+
+                saveButton.disabled = false;
+                saveButton.textContent =
+                    "Сохранить";
+            }
+        }
+    );
+
+
+    passwordForm.addEventListener(
+        "submit",
+        async (event) => {
+
+            event.preventDefault();
+
+            passwordError.textContent = "";
+            passwordSuccess.textContent = "";
+
+            const password =
+                document
+                    .getElementById(
+                        "newUserPassword"
+                    )
+                    .value;
+
+
+            if (!password) {
+
+                passwordError.textContent =
+                    "Введите новый пароль";
+
+                return;
+            }
+
+
+            passwordButton.disabled = true;
+            passwordButton.textContent =
+                "Смена пароля...";
+
+
+            try {
+
+                const result =
+                    await changeUserPassword(
+                        userId,
+                        password
+                    );
+
+
+                if (!result.ok) {
+
+                    passwordError.textContent =
+                        result.error ||
+                        "Не удалось сменить пароль";
+
+                    return;
+                }
+
+
+                document
+                    .getElementById(
+                        "newUserPassword"
+                    )
+                    .value = "";
+
+                passwordSuccess.textContent =
+                    "Пароль изменён";
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                passwordError.textContent =
+                    "Нет связи с сервером";
+
+
+            } finally {
+
+                passwordButton.disabled = false;
+
+                passwordButton.textContent =
+                    "Сменить пароль";
+            }
+        }
+    );
+}
+
+
+// =====================================
+// HELPERS
+// =====================================
+
+function escapeHtml(value) {
+
+    return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+
+function escapeAttribute(value) {
+
+    return escapeHtml(value);
+}
+</file>
+
+<file path="public/js/api.js">
+const API_URL = "https://pos-api.lateshoy.workers.dev";
+
+
+async function request(path, options = {}) {
+
+    const response = await fetch(
+        `${API_URL}${path}`,
+        {
+            ...options,
+
+            credentials: "include",
+
+            headers: {
+                ...options.headers
+            }
+        }
+    );
+
+
+    let data;
+
+    try {
+
+        data = await response.json();
+
+    } catch {
+
+        data = {
+            ok: false,
+            error: "Некорректный ответ сервера"
+        };
+    }
+
+
+    if (!response.ok && data.ok !== false) {
+
+        data.ok = false;
+    }
+
+
+    return data;
+}
+
+
+// =====================================
+// AUTH
+// =====================================
+
+export function login(
+    username,
+    password
+) {
+
+    return request(
+        "/api/auth/login",
+        {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                username,
+                password
+            })
+        }
+    );
+}
+
+
+export function getCurrentUser() {
+
+    return request(
+        "/api/auth/me"
+    );
+}
+
+
+export function logout() {
+
+    return request(
+        "/api/auth/logout",
+        {
+            method: "POST"
+        }
+    );
+}
+
+
+// =====================================
+// USERS
+// =====================================
+
+export function getUsers() {
+
+    return request(
+        "/api/admin/users"
+    );
+}
+
+
+export function getUser(id) {
+
+    return request(
+        `/api/admin/users/${id}`
+    );
+}
+
+
+export function createUser(data) {
+
+    return request(
+        "/api/admin/users",
+        {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(data)
+        }
+    );
+}
+
+
+export function updateUser(
+    id,
+    data
+) {
+
+    return request(
+        `/api/admin/users/${id}`,
+        {
+            method: "PUT",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(data)
+        }
+    );
+}
+
+
+export function changeUserPassword(
+    id,
+    password
+) {
+
+    return request(
+        `/api/admin/users/${id}/password`,
+        {
+            method: "PUT",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                password
+            })
+        }
+    );
+}
+
+
+// =====================================
+// ROLES
+// =====================================
+
+export function getRoles() {
+
+    return request(
+        "/api/admin/roles"
+    );
+}
+
+
+export function getPermissions() {
+
+    return request(
+        "/api/admin/roles/permissions"
+    );
+}
+
+
+export function getRolePermissions(id) {
+
+    return request(
+        `/api/admin/roles/${id}/permissions`
+    );
+}
+
+
+export function updateRolePermissions(
+    id,
+    permissionIds
+) {
+
+    return request(
+        `/api/admin/roles/${id}/permissions`,
+        {
+            method: "PUT",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                permissionIds
+            })
+        }
+    );
+}
+</file>
+
+<file path="public/js/app.js">
+import {
+    getCurrentUser,
+    logout
+} from "./api.js";
+
+import {
+    LoginPage,
+    initLogin
+} from "./pages/login.js";
+
+import {
+    HomePage,
+    initHome
+} from "./pages/home.js";
+
+import {
+    UsersPage,
+    initUsers
+} from "./pages/users.js";
+
+import {
+    RolesPage,
+    initRoles
+} from "./pages/roles.js";
+
+
+const app =
+    document.getElementById("app");
+
+
+let currentUser = null;
+
+
+// =====================================
+// START
+// =====================================
+
+async function start() {
+
+    try {
+
+        const result =
+            await getCurrentUser();
+
+
+        if (
+            result.ok &&
+            result.user
+        ) {
+
+            currentUser =
+                result.user;
+
+
+            if (
+                !hasPermission(
+                    "admin.access"
+                )
+            ) {
+
+                showAccessDenied();
+
+                return;
+            }
+
+
+            showHome();
+
+            return;
+        }
+
+
+    } catch (error) {
+
+        console.error(error);
+    }
+
+
+    showLogin();
+}
+
+
+// =====================================
+// PERMISSIONS
+// =====================================
+
+function hasPermission(
+    permission
+) {
+
+    if (!currentUser) {
+        return false;
+    }
+
+
+    if (
+        !Array.isArray(
+            currentUser.permissions
+        )
+    ) {
+
+        return false;
+    }
+
+
+    return currentUser.permissions.includes(
+        permission
+    );
+}
+
+
+// =====================================
+// LOGIN
+// =====================================
+
+function showLogin() {
+
+    currentUser = null;
+
+    app.innerHTML =
+        LoginPage();
+
+
+    initLogin(
+        start
+    );
+}
+
+
+// =====================================
+// ACCESS DENIED
+// =====================================
+
+function showAccessDenied() {
+
+    app.innerHTML = `
+        <div class="loginPage">
+
+            <div class="loginCard">
+
+                <h1>
+                    Нет доступа
+                </h1>
+
+                <p>
+                    У вашей учётной записи нет доступа
+                    к панели управления.
+                </p>
+
+                <button
+                    id="accessDeniedLogout"
+                    class="primaryButton"
+                    type="button"
+                >
+                    Выйти
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+
+    document
+        .getElementById(
+            "accessDeniedLogout"
+        )
+        .addEventListener(
+            "click",
+            doLogout
+        );
+}
+
+
+// =====================================
+// HOME
+// =====================================
+
+function showHome() {
+
+    if (
+        !hasPermission(
+            "admin.access"
+        )
+    ) {
+
+        showAccessDenied();
+
+        return;
+    }
+
+
+    app.innerHTML =
+        HomePage(
+            currentUser
+        );
+
+
+    initHome({
+
+        onUsers:
+            showUsers,
+
+        onRoles:
+            showRoles,
+
+        onLogout:
+            doLogout
+    });
+}
+
+
+// =====================================
+// USERS
+// =====================================
+
+function showUsers() {
+
+    if (
+        !hasPermission(
+            "users.read"
+        )
+    ) {
+
+        alert(
+            "Нет прав на просмотр пользователей"
+        );
+
+        return;
+    }
+
+
+    app.innerHTML =
+        UsersPage();
+
+
+    initUsers({
+        onBack:
+            showHome
+    });
+}
+
+
+// =====================================
+// ROLES
+// =====================================
+
+function showRoles() {
+
+    if (
+        !hasPermission(
+            "roles.read"
+        )
+    ) {
+
+        alert(
+            "Нет прав на просмотр ролей"
+        );
+
+        return;
+    }
+
+
+    app.innerHTML =
+        RolesPage();
+
+
+    initRoles({
+        onBack:
+            showHome
+    });
+}
+
+
+// =====================================
+// LOGOUT
+// =====================================
+
+async function doLogout() {
+
+    try {
+
+        await logout();
+
+    } catch (error) {
+
+        console.error(error);
+
+    } finally {
+
+        showLogin();
+    }
+}
+
+
+// =====================================
+// INIT
+// =====================================
+
+start();
+</file>
+
+<file path="public/manifest.json">
+{
+  "name": "Котопанда POS Admin",
+  "short_name": "POS Admin",
+  "description": "Администрирование Котопанда POS",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#009900",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+</file>
+
+<file path="public/sw.js">
+self.addEventListener("install", () => {
+    self.skipWaiting();
+});
+
+
+self.addEventListener("activate", event => {
+
+    event.waitUntil(
+        self.clients.claim()
+    );
+});
+</file>
+
+<file path="public/index.html">
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#009900"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="default"
+    >
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="POS Admin"
+    >
+
+    <title>Котопанда POS Admin</title>
+
+    <link
+        rel="manifest"
+        href="/manifest.json"
+    >
+
+    <link
+        rel="icon"
+        href="/assets/icons/icon-192.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="/assets/icons/icon-192.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div id="app"></div>
+
+
+    <script
+        type="module"
+        src="/js/app.js"
+    ></script>
+
+
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            window.addEventListener(
+                "load",
+                () => {
+
+                    navigator.serviceWorker
+                        .register("/sw.js")
+                        .catch(error => {
+                            console.error(
+                                "Service Worker:",
+                                error
+                            );
+                        });
+
+                }
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+</file>
+
+<file path=".gitignore">
+# Logs
+
+logs
+_.log
+npm-debug.log_
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+# Runtime data
+
+pids
+_.pid
+_.seed
+\*.pid.lock
+
+# Directory for instrumented libs generated by jscoverage/JSCover
+
+lib-cov
+
+# Coverage directory used by tools like istanbul
+
+coverage
+\*.lcov
+
+# nyc test coverage
+
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+
+bower_components
+
+# node-waf configuration
+
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+
+build/Release
+
+# Dependency directories
+
+node_modules/
+jspm_packages/
+
+# Snowpack dependency directory (https://snowpack.dev/)
+
+web_modules/
+
+# TypeScript cache
+
+\*.tsbuildinfo
+
+# Optional npm cache directory
+
+.npm
+
+# Optional eslint cache
+
+.eslintcache
+
+# Optional stylelint cache
+
+.stylelintcache
+
+# Microbundle cache
+
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+
+.node_repl_history
+
+# Output of 'npm pack'
+
+\*.tgz
+
+# Yarn Integrity file
+
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+
+.cache
+.parcel-cache
+
+# Next.js build output
+
+.next
+out
+
+# Nuxt.js build / generate output
+
+.nuxt
+dist
+
+# Gatsby files
+
+.cache/
+
+# Comment in the public line in if your project uses Gatsby and not Next.js
+
+# https://nextjs.org/blog/next-9-1#public-directory-support
+
+# public
+
+# vuepress build output
+
+.vuepress/dist
+
+# vuepress v2.x temp and cache directory
+
+.temp
+.cache
+
+# Docusaurus cache and generated files
+
+.docusaurus
+
+# Serverless directories
+
+.serverless/
+
+# FuseBox cache
+
+.fusebox/
+
+# DynamoDB Local files
+
+.dynamodb/
+
+# TernJS port file
+
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+
+.vscode-test
+
+# yarn v2
+
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.\*
+
+# wrangler project
+
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+.wrangler/
+</file>
+
+<file path="AGENTS.md">
+# Cloudflare Workers
+
+STOP. Your knowledge of Cloudflare Workers APIs and limits may be outdated. Always retrieve current documentation before any Workers, KV, R2, D1, Durable Objects, Queues, Vectorize, AI, or Agents SDK task.
+
+## Docs
+
+- https://developers.cloudflare.com/workers/
+- MCP: `https://docs.mcp.cloudflare.com/mcp`
+
+For all limits and quotas, retrieve from the product's `/platform/limits/` page. eg. `/workers/platform/limits`
+
+## Commands
+
+| Command | Purpose |
+|---------|---------|
+| `npx wrangler dev` | Local development |
+| `npx wrangler deploy` | Deploy to Cloudflare |
+| `npx wrangler types` | Generate TypeScript types |
+
+Run `wrangler types` after changing bindings in wrangler.jsonc.
+
+## Node.js Compatibility
+
+https://developers.cloudflare.com/workers/runtime-apis/nodejs/
+
+## Errors
+
+- **Error 1102** (CPU/Memory exceeded): Retrieve limits from `/workers/platform/limits/`
+- **All errors**: https://developers.cloudflare.com/workers/observability/errors/
+
+## Product Docs
+
+Retrieve API references and limits from:
+`/kv/` · `/r2/` · `/d1/` · `/durable-objects/` · `/queues/` · `/vectorize/` · `/workers-ai/` · `/agents/`
+
+## Best Practices (conditional)
+
+If the application uses Durable Objects or Workflows, refer to the relevant best practices:
+
+- Durable Objects: https://developers.cloudflare.com/durable-objects/best-practices/rules-of-durable-objects/
+- Workflows: https://developers.cloudflare.com/workflows/build/rules-of-workflows/
+</file>
+
+<file path="package.json">
+{
+  "name": "pos-admin",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.123.0"
+  }
+}
+</file>
+
+<file path="wrangler.jsonc">
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "pos-admin",
+	"compatibility_date": "2026-08-15",
+	"assets": {
+		// The path to the directory containing the `index.html` file to be served at `/`
+		"directory": "./public"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"upload_source_maps": true
+	/**
+	 * Smart Placement
+	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
+	 */
+	// "placement": {  "mode": "smart" }
+	/**
+	 * Bindings
+	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
+	 * databases, object storage, AI inference, real-time communication and more.
+	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+	 */
+	/**
+	 * Environment Variables
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+	 * Note: Use secrets to store sensitive data.
+	 * https://developers.cloudflare.com/workers/configuration/secrets/
+	 */
+	// "vars": {  "MY_VARIABLE": "production_value" }
+	/**
+	 * Service Bindings (communicate between multiple Workers)
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
+	 */
+	// "services": [  {   "binding": "MY_SERVICE",   "service": "my-service"  } ]
+}
+</file>
+
+</files>
