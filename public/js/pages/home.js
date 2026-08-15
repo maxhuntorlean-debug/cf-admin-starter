@@ -1,8 +1,10 @@
+import { APP_TITLE } from "../config.js";
+
 export function HomePage(user) {
     return `
         <div class="adminPage">
             <header class="adminHeader">
-                <div>⚙️ Admin Panel</div>
+                <div>⚙️ ${escapeHtml(APP_TITLE)}</div>
                 <div>
                     ${escapeHtml(
                         user.name ||
