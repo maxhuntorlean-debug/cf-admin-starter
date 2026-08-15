@@ -1,6 +1,6 @@
 {
-  "name": "pos-admin",
-  "version": "0.0.0",
+  "name": "cf-admin-starter",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "deploy": "wrangler deploy",
